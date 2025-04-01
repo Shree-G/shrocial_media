@@ -22,69 +22,6 @@ function MobileNavbar() {
 
     return (
 
-
-        // <div className="flex items-center gap-2">
-        //     <ModeToggle />
-        //     <Sheet open={showMobileMenu} onOpenChange={setShowMobileMenu}>
-        //         <SheetTrigger asChild>
-        //             <Button variant="ghost" size="icon">
-        //                 <MenuIcon />
-        //             </Button>
-        //         </SheetTrigger>
-
-        //         <SheetContent>
-        //             <SheetHeader>
-        //                 <SheetTitle>
-        //                     More Actions
-        //                 </SheetTitle>
-        //             </SheetHeader>
-
-        //             <nav className="flex flex-col items-center">
-        //                 <Button variant="ghost" className="flex items-center justify-center" asChild>
-        //                     <Link href="/">
-        //                         <HomeIcon />
-        //                         <span>Home</span>
-        //                     </Link>
-        //                 </Button>
-
-        //                 { isSignedIn ? (
-                            
-        //                     <div className="hidden md:flex items-center justify-center gap-3">
-        //                         <Button variant="ghost" className="flex items-center justify-center" asChild>
-        //                             <Link href="/notifications">
-        //                                 <BellIcon />
-        //                                 <span>Notifications</span>
-        //                             </Link>
-        //                         </Button>
-
-        //                         <Button variant="ghost" className="flex items-center justify-center" asChild>
-        //                             <Link href = "/profile">
-        //                                 <UserIcon />
-        //                                 <span>Profile</span>
-        //                             </Link>
-        //                         </Button>
-
-        //                         {/* <UserButton /> */}
-        //                     </div>
-                            
-
-
-        //                     ) :
-
-        //                     (
-        //                         <SignInButton mode="modal">
-        //                             <Button variant="default">
-        //                                 Sign In
-        //                             </Button>
-        //                         </SignInButton>
-        //                     )
-        //                 }
-        //             </nav>
-                    
-        //         </SheetContent>
-        //     </Sheet>
-        // </div>
-
         <div className="flex md:hidden items-center space-x-2">
       <ModeToggle />
 
