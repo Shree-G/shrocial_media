@@ -17,7 +17,7 @@ export default async function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b">
       <div className="max-w-7xl flex items-center my-2 mx-auto px-3 justify-between">
-        <Link href="/" className="font-mono tracking-wide ">
+        <Link href="/" className="font-mono tracking-wide text-xl">
           Shrocial Media
         </Link>
 

@@ -5,7 +5,7 @@ import { Button } from './ui/button'
 
 export default function UnauthenticatedSidebar() {
   return (
-    <Card className=''>
+    <Card className='sticky top-0'>
         <CardHeader className='gap-3'>
             <CardTitle className='text-center font-mono font-bold text-2xl'>Welcome Back!</CardTitle>
             <CardDescription className='text-center tracking-tighter text-base'>Sign in to access your profile and connect with others. Or sign up!</CardDescription>

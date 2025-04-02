@@ -7,6 +7,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
+import toast, { Toaster } from 'react-hot-toast';
 
 export const metadata: Metadata = {
   title: "Shrocial Media",
@@ -43,6 +44,7 @@ export default function RootLayout({
               </main>
               
             </div>
+            <Toaster />
 
           </ThemeProvider>
         </body>
