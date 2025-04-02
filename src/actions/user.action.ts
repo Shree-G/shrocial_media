@@ -3,6 +3,7 @@
 import { prisma } from "@/lib/prisma";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { shuffle } from 'lodash';
+import { revalidatePath } from "next/cache";
 
 export async function syncUser() {
     try {
@@ -112,5 +113,62 @@ export async function getRandomUsers() {
         console.log("Error fetching random users", e)
         return[];
     }
+    
+}
+
+export async function toggleFollow(otherUserId:string) {
+    const thisUserId = await getDbUserId();
+    if(!thisUserId) return {success:false, error:"could not find this user"};
+
+    if(thisUserId === otherUserId){
+        throw new Error("You cannot follow yourself!");
+    }
+
+    try {
+        const followed = await prisma.follows.findUnique({
+            where: {
+                followerId_followingId: {
+                    followerId: thisUserId,
+                    followingId: otherUserId,
+                }
+            },
+        })
+    
+        if (followed) {
+            // unfollow
+            await prisma.follows.delete({
+                where: {
+                    followerId_followingId: {
+                        followerId: thisUserId,
+                        followingId: otherUserId,
+                    }
+                }
+            })
+    
+        } else {
+            // follow
+            await prisma.$transaction([
+                prisma.follows.create({
+                    data: {
+                        followerId: thisUserId,
+                        followingId: otherUserId,
+                    }
+                }),
+    
+                prisma.notification.create({
+                    data: {
+                        type: "FOLLOW",
+                        notifCreatorId: thisUserId,
+                        notifReceiverId: otherUserId,
+                    }
+                })
+            ])
+        }
+        revalidatePath("/");
+        return {success:true}
+    } catch(e) {
+        return {success:false, error: "error with followToggle"}
+    }
+
     
 }
