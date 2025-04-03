@@ -63,3 +63,52 @@ export async function getAllRelevantPosts() {
         return[];
     }
 }
+
+export async function getAllPosts() {
+    try {
+
+        const posts = await prisma.post.findMany({
+            orderBy: { createdAt: "desc" },
+            include: {
+                author: {
+                    select: {
+                        name: true,
+                        image: true,
+                        username: true,
+                    }
+                },
+                comments: {
+                    include:{
+                        author:{
+                            select:{
+                                id: true,
+                                username: true,
+                                image: true,
+                                name: true
+                            }
+                        }
+                    },
+                    orderBy: {
+                        createdAt:"asc",
+                    }
+                },
+                likes: {
+                    select: {
+                        userId: true,
+                    }
+                },
+                _count:{
+                    select:{
+                        likes:true,
+                        comments:true,
+                    }
+                }
+            },
+        })
+
+        return posts;
+    } catch(e) {
+        console.log("Error fetching posts", e)
+        return[];
+    }
+}

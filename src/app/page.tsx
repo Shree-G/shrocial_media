@@ -1,11 +1,14 @@
-import { getAllRelevantPosts } from "@/actions/post.action";
+import { getAllPosts, getAllRelevantPosts } from "@/actions/post.action";
+import { getDbUserId } from "@/actions/user.action";
 import CreatePost from "@/components/CreatePost";
+import PostCard from "@/components/PostCard";
 import RecUsers from "@/components/RecUsers";
 import { currentUser } from "@clerk/nextjs/server";
 
 export default async function Home() {
   const user = await currentUser();
-  const posts = await getAllRelevantPosts();
+  const posts = await getAllPosts();
+  const dbUserId = await getDbUserId();
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
@@ -13,10 +16,12 @@ export default async function Home() {
 
         {user ? <CreatePost /> : null}
 
-        {posts.map((post) => (
-          // <PostCard id=post.id />
-          <p id={post.id}>{post.content}</p>
-        ))}
+        <div className="space-y-6">
+          {posts.map((post) => (
+            <PostCard key={post.id} post={post} dbUserId={dbUserId}/>
+            // <p id={post.id}>{post.content}</p>
+          ))}
+        </div>
 
       </div>
 
