@@ -11,7 +11,7 @@ export default async function RecUsers() {
     if(!users || users.length === 0) { return}
 
     return (
-        <Card>
+        <Card className='sticky top-20'>
           <CardHeader>
             <CardTitle>Who to Follow</CardTitle>
           </CardHeader>

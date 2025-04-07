@@ -3,7 +3,6 @@ import React from "react";
 import DesktopNavbar from "./DesktopNavbar";
 import MobileNavbar from "./MobileNavbar";
 import { currentUser } from "@clerk/nextjs/server";
-import { prisma } from "@/lib/prisma";
 import { syncUser } from "@/actions/user.action";
 
 export default async function Navbar() {
