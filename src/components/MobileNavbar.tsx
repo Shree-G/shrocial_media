@@ -15,10 +15,12 @@ import { useState } from "react";
 import { useAuth, SignInButton, SignOutButton, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import ModeToggle from "./ModeToggle";
+import { useUser } from "@clerk/nextjs";
 
 function MobileNavbar() {
     const [showMobileMenu, setShowMobileMenu] = useState(false);
     const {isSignedIn} = useAuth();
+    const {user} = useUser();
 
     return (
 
@@ -52,7 +54,7 @@ function MobileNavbar() {
                   </Link>
                 </Button>
                 <Button variant="ghost" className="flex items-center gap-3 justify-start" asChild>
-                  <Link href="/profile">
+                  <Link href = {`/profile/${user?.username ?? user?.emailAddresses[0].emailAddress.split("@")[0]}`}>
                     <UserIcon className="w-4 h-4" />
                     Profile
                   </Link>
