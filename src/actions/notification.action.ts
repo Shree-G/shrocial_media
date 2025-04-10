@@ -13,6 +13,7 @@ export async function getAllNotifications() {
             where: {notifReceiverId: userId},
             orderBy: {createdAt: "desc"},
             include: {
+                notifCreator: true,
                 notifReceiver: true,
                 comment: true,
                 post: true,

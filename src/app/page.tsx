@@ -19,7 +19,6 @@ export default async function Home() {
         <div className="space-y-6">
           {posts.map((post) => (
             <PostCard key={post.id} post={post} dbUserId={dbUserId}/>
-            // <p id={post.id}>{post.content}</p>
           ))}
         </div>
 
