@@ -10,11 +10,12 @@ import { Avatar, AvatarImage } from "./ui/avatar";
 import { Textarea } from "./ui/textarea";
 import { createPost } from "@/actions/post.action";
 import toast from "react-hot-toast";
+import ImageUpload from "./ImageUpload";
 
 export default function CreatePost() {
   const {user} = useUser();
   const [content, setContent] = useState("");
-  const [imageUrl, setimageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const [isPosting, setIsPosting] = useState(false); // to eliminate race conditions
   const [showImageUpload, setShowImageUpload] = useState(false);
 
@@ -27,7 +28,7 @@ export default function CreatePost() {
         
         if (result.success = true) {
             setContent("");
-            setimageUrl("");
+            setImageUrl("");
             setShowImageUpload(false)
 
             toast.success('Successfully Posted!')
@@ -58,7 +59,18 @@ export default function CreatePost() {
             />
           </div>
 
-          {/* to-do image uploads */}
+          {(showImageUpload || imageUrl) && (
+            <div className="border rounded-lg p-4">
+              <ImageUpload
+                endpoint="postImage"
+                value={imageUrl}
+                onChange={(url) => {
+                  setImageUrl(url);
+                  if (!url) setShowImageUpload(false);
+                }}
+              />
+            </div>
+          )}
 
           <div className="flex items-center justify-between border-t pt-4">
             <div className="flex space-x-2">
