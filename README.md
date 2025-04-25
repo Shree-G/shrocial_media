@@ -19,6 +19,7 @@
   - [Next.js 13](https://nextjs.org/): React framework for server-side rendering and static site generation.
   - [TypeScript](https://www.typescriptlang.org/): Typed superset of JavaScript for scalable code.
   - [Tailwind CSS](https://tailwindcss.com/): Utility-first CSS framework for rapid UI development.
+  - [ShadCN UI](https://ui.shadcn.com/): Beautifully styled and accessible UI components built with Radix UI and Tailwind CSS.
 
 - **Backend**:
   - [Prisma ORM](https://www.prisma.io/): Type-safe database client for PostgreSQL.
