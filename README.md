@@ -4,7 +4,7 @@
 
 ## Overview
 
-**Shrocial Media** is a full-stack social media web application designed to emulate core functionalities of modern platforms like Twitter and Instagram. Built with a focus on scalability, performance, and developer experience, real-time interactions to enhance user engagement.
+**Shrocial Media** is a full-stack social media web application designed to emulate core functionalities of modern platforms like Twitter and Instagram.
 
 ## Key Features
 
