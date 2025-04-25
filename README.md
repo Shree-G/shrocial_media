@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shrocial Media
 
-## Getting Started
+**Live Demo**: [shrocial-media.vercel.app](https://shrocial-media.vercel.app)
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Shrocial Media** is a full-stack social media web application designed to emulate core functionalities of modern platforms like Twitter and Instagram. Built with a focus on scalability, performance, and developer experience, real-time interactions to enhance user engagement.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **User Authentication**: Secure sign-up and login functionalities with session management.
+- **Post Creation**: Users can create, edit, and delete posts with text and media content.
+- **Real-Time Feed**: Live updates to the feed using WebSockets for instantaneous content delivery.
+- **Responsive Design**: Mobile-first design ensuring usability across devices.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- **Frontend**:
+  - [Next.js 13](https://nextjs.org/): React framework for server-side rendering and static site generation.
+  - [TypeScript](https://www.typescriptlang.org/): Typed superset of JavaScript for scalable code.
+  - [Tailwind CSS](https://tailwindcss.com/): Utility-first CSS framework for rapid UI development.
 
-To learn more about Next.js, take a look at the following resources:
+- **Backend**:
+  - [Prisma ORM](https://www.prisma.io/): Type-safe database client for PostgreSQL.
+  - [NextAuth.js](https://next-auth.js.org/): Authentication for Next.js applications.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Database**:
+  - [PostgreSQL](https://www.postgresql.org/): Relational database for storing user and post data.
+  - [Neon](https://neon.tech/): Serverless PostgreSQL with branching and real-time scaling.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Deployment**:
+  - [Vercel](https://vercel.com/): Hosting platform for frontend and serverless functions.
 
-## Deploy on Vercel
+## Installation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Shree-G/shrocial_media.git
+   cd shrocial_media
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Install Dependencies**:
+   ```bash
+   npm install
+
+3. **Set up Environment Variables
+- Create a .env file in the root directory.
+- Add necessary environment variables as necessary
+
+4. **Run the development server**:
+   ```bash
+   npm run dev
+Open http://localhost:3000 in your browser to view the application.
+
+## Contributions
+Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
+
+## Contact
+
+For inquiries or collaboration opportunities:
+
+- **Email**: [shree.hridai@gmail.com](mailto:shree.hridai@gmail.com)
+- **LinkedIn**: [linkedin.com/in/shree-gopalakrishnan-4b2427214](https://www.linkedin.com/in/shree-gopalakrishnan-4b2427214/)
+
